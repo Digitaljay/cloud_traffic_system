@@ -1,9 +1,12 @@
 import json
 import requests
 import shelve
+def makeunix(st_time):
+    time_correctly=st_time.split()[1]
+    return time_correctly
 import datetime
 # db=shelve.open("base")
-while datetime.datetime.today()<datetime.datetime(2020, 1, 3, 22, 10, 00):
+while True:
     try:
         response = requests.get("http://map.ettu.ru/api/v2/tram/boards/?apiKey=111&order=1").text
         data = json.loads(response)["vehicles"]
