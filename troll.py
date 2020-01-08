@@ -19,7 +19,7 @@ while True:
                         board=information["BOARD_ID"]
                         course=information["COURSE"]
 
-                        need="{gps:{lat:"+str(lat)+", lon:"+str(lon)+"}, board_id:"+board+", course:"+course+"}"
+                        need='{"gps":{"lat":'+str(lat)+', "lon":'+str(lon)+'}, "board_id":'+board+', "course":'+course+"}"
                         print(need)
                         push = firebase.put("https://light-adapt.firebaseio.com/", str(makeunix(information["ATIME"])),need)
     except:
